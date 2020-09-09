@@ -7,11 +7,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
 	public TestBase() {
+		
+	PageFactory.initElements(driver, this);
 	prop=new Properties();
 	try {
 		FileInputStream fis=new FileInputStream("C:\\Users\\vishnuzz\\eclipse-workspace\\Amidez\\src\\main\\java\\com\\qa\\config\\config.properties");
